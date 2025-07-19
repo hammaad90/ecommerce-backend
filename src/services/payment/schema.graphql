@@ -1,0 +1,23 @@
+# src/services/payment/schema.graphql
+
+type PaymentIntent {
+  id: ID!
+  amount: Int!
+  currency: String!
+  status: String!
+  clientSecret: String!
+}
+
+extend type Query {
+  getPaymentStatus(paymentIntentId: ID!): PaymentIntent
+}
+
+extend type Mutation {
+  createPayment(
+    amount: Int!
+    currency: String
+    metadata: JSON
+  ): PaymentIntent!
+}
+
+scalar JSON

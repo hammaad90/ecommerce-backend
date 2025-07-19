@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020",                     /* Latest features supported by Node 16+ (Lambda runtime) */
+    "module": "commonjs",                   /* AWS Lambda + Node.js expects CommonJS modules */
+    "lib": ["ES2020"],                       /* Include modern JavaScript features */
+    "moduleResolution": "node",             /* Resolve Node-style imports */
+    "esModuleInterop": true,                /* Allow default imports from CommonJS modules */
+    "allowSyntheticDefaultImports": true,   /* Match ESModule import behavior */
+    "resolveJsonModule": true,              /* Allow importing JSON files */
+
+    /* Strict Type Checking */
+    "strict": true,                         /* Enable all strict type-checking options */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,                   /* Skip checking .d.ts type files for performance */
+
+    /* Output and Build Options */
+    "outDir": "./dist",                     /* Output compiled JS here */
+    "rootDir": "./src",                     /* Source code root */
+    "sourceMap": true,                      /* Generate source maps for debugging */
+    "removeComments": true,                 /* Clean JS output */
+
+    /* Useful for Lambda & async code */
+    "noImplicitAny": true,                  /* Catch implicit 'any' */
+    "noUnusedLocals": true,                 /* Warn about unused locals */
+    "noUnusedParameters": true,             /* Warn about unused parameters */
+    "noFallthroughCasesInSwitch": true      /* Catch missing switch case breaks */
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

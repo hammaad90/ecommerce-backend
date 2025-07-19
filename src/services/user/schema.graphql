@@ -1,0 +1,34 @@
+# src/services/user/schema.graphql
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  role: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type AuthPayload {
+  token: String!
+}
+
+extend type Query {
+  me: User
+}
+
+input RegisterInput {
+  email: String!
+  password: String!
+  name: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+extend type Mutation {
+  register(input: RegisterInput!): User!
+  login(input: LoginInput!): AuthPayload!
+}

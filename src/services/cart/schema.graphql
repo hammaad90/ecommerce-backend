@@ -1,0 +1,16 @@
+# src/services/cart/schema.graphql
+
+type CartItem {
+  productId: ID!
+  quantity: Int!
+}
+
+extend type Query {
+  cart: [CartItem!]!
+}
+
+extend type Mutation {
+  addToCart(productId: ID!, quantity: Int!): [CartItem!]!
+  removeFromCart(productId: ID!): [CartItem!]!
+  clearCart: Boolean!
+}

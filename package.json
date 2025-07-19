@@ -1,0 +1,52 @@
+{
+  "name": "ecommerce-backend",
+  "version": "1.0.0",
+  "description": "Production-ready e-commerce backend using Node.js, GraphQL, AWS Lambda, MongoDB, Redis, and Docker",
+  "main": "dist/handler.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx serverless offline",
+    "deploy": "npx serverless deploy",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "test": "jest"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.4.0",
+    "aws-sdk": "^2.1350.0",
+    "bcryptjs": "^2.4.3",
+    "graphql": "^16.6.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.3.0",
+    "mongoose": "^8.16.4",
+    "pino": "^8.10.0",
+    "redis": "^4.6.5",
+    "stripe": "^12.12.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.152",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jest": "^29.5.2",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^20.3.1",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.59.8",
+    "@typescript-eslint/parser": "^5.59.8",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.5.0",
+    "prettier": "^3.0.0",
+    "serverless": "^3.40.0",
+    "serverless-offline": "^11.2.0",
+    "serverless-plugin-typescript": "^2.1.5",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+}

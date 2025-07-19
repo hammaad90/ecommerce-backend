@@ -1,0 +1,40 @@
+# src/services/order/schema.graphql
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  CANCELLED
+}
+
+type OrderItem {
+  productId: ID!
+  quantity: Int!
+  price: Float!
+}
+
+type Order {
+  id: ID!
+  userId: ID!
+  items: [OrderItem!]!
+  totalAmount: Float!
+  status: OrderStatus!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+extend type Query {
+  orders: [Order!]!
+  order(id: ID!): Order
+}
+
+input OrderItemInput {
+  productId: ID!
+  quantity: Int!
+  price: Float!
+}
+
+extend type Mutation {
+  createOrder(items: [OrderItemInput!]!): Order!
+  updateOrderStatus(id: ID!, status: OrderStatus!): Order
+}
