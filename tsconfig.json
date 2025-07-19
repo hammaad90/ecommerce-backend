@@ -26,6 +26,6 @@
     "noUnusedParameters": true,             /* Warn about unused parameters */
     "noFallthroughCasesInSwitch": true      /* Catch missing switch case breaks */
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "graphql.d.ts"],
   "exclude": ["node_modules", "dist"]
 }

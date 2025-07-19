@@ -35,4 +35,7 @@ export async function sendNotification(subject: string, message: string, phoneNu
 
       logger.info(`Notification published to SNS topic: ${subject}`);
     }
-  } catch (
+  } catch (err){
+    logger.error(err)
+  }
+}

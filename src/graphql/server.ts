@@ -15,7 +15,7 @@ import orderSchema from "../services/order/schema.graphql";
 import paymentResolvers from "../services/payment/resolvers";
 import paymentSchema from "../services/payment/schema.graphql";
 import { authenticateToken } from "../shared/middleware/auth";
-import { connectToMongoDB } from "../shared/db/mongo";
+import { connectMongo } from "../shared/db/mongo";
 
 // Load DateTime scalar definition from a separate file or define inline
 const dateTimeScalar = `
@@ -45,7 +45,7 @@ export const server = new ApolloServer({
   schema: makeExecutableSchema({ typeDefs, resolvers }),
   context: async ({ event }) => {
     // Connect to MongoDB on each invocation (will reuse cached connection)
-    await connectToMongoDB();
+    await connectMongo();
 
     // Extract Authorization header
     const authHeader = event.headers.Authorization || event.headers.authorization || "";
